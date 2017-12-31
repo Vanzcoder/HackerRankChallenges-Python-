@@ -33,7 +33,6 @@ Example: You are given two integers x and y .
   
 Solution:
 """
-
 if __name__ == '__main__':
     x = int(input())
     y = int(input())
