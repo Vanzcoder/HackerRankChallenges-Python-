@@ -31,7 +31,7 @@ Given list is [2 3 6 6 5]. The maximum score is 6, second maximum is 5. Hence, w
 """
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': #This is if you are pulling data from another place
     n = int(input())
     arr = map(int, input().split())
     runner_up = -100
