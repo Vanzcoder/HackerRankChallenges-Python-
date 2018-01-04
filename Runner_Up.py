@@ -31,16 +31,15 @@ Given list is [2 3 6 6 5]. The maximum score is 6, second maximum is 5. Hence, w
 """
 
 
-print("ehl")
-n = int(input("example n:"))
-arr = map(int, input("arr : ").split())
-runner_up = 0
-for item in arr:
-    if item > runner_up:
-        runner_up = item
-for item in arr:
-    arr.remove(runner_up) #I don't know how to remove something from a map because this doesn't work
-for item in arr:
-    if item > runner_up:
-        runner_up = item    
-print(runner_up)
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    runner_up = -100
+    maximum = -100
+    for item in arr:
+        if item > maximum:
+            runner_up = maximum
+            maximum = item
+        elif item >= (runner_up) and item != maximum:
+            runner_up = item 
+    print(runner_up)
