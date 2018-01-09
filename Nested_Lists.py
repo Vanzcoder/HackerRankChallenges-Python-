@@ -57,22 +57,25 @@ if __name__ == '__main__':
         list_inner = [name, score]       
         list_outer.append(list_inner)
     
-    # This finds min and max
+    #This finds min and max
     Min = 100
-    Max = 0
+    Sec_lowest = 100
+    Min_names = []
+    Sec_names = []
+    
     for item in list_outer:
-        if item[1] > Max:
-            Max = item[1]
-            print("Min", Min)
-        if item[1] < Min:
-            Min = item[1]
-            print("Max", Max)
-    ##        
-    """
-    Sec_lowest = Max
-    for item in list_outer:
-    	if item[1] > Min and item[1] <= Sec_lowest:
-          Sec_lowest = min(item[1])
-          name = item[0]
-    print(Sec_lowest, name)
-"""
+      if item[1] < Min:
+        Sec_lowest = Min
+        Sec_names = Min_names
+        Min = item[1]
+        Min_names = [item[0]]
+      elif item[1] == Min:
+        Min_names.insert(0,item[0])
+      elif item[1] < Sec_lowest:
+        Sec_lowest = item[1]
+        Sec_names = [item[0]]
+      elif item[1] == Sec_lowest:
+        Sec_names.append(item[0])
+
+    for item in Sec_names:
+      print(item)
