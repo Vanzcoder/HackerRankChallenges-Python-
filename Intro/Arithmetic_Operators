@@ -10,3 +10,13 @@ The first line contains the first integer, a. The second line contains the secon
 Constraints
 1<= a<=10^10
 1<= b<=10^10"""
+
+if __name__ == '__main__':
+    a = int(raw_input())
+    b = int(raw_input())
+    first = a + b
+    second = a - b
+    third = a*b
+    print(first)
+    print(second)
+    print(third)
