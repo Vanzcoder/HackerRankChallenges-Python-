@@ -19,3 +19,18 @@ Constraints
 Output Format
 Output is taken care of by the template. Your function must return a boolean value (True/False)
 """
+
+def is_leap(year):
+    leap = False
+    remainder_4 = int(year) % 4
+    remainder_100 = int(year) % 100
+    remainder_400 = int(year) % 400
+    if remainder_4==0 and remainder_100!=0:
+        leap = True
+    elif remainder_100==0 and remainder_400!=0:
+        leap = False
+    elif remainder_400==0:
+        leap = True
+    else:
+        leap = False
+    return leap
