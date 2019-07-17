@@ -1,0 +1,90 @@
+
+Kevin and Stuart want to play the 'The Minion Game'.
+
+Game Rules
+
+Both players are given the same string, S.
+Both players have to make substrings using the letters of the string, S.
+Stuart has to make words starting with consonants.
+Kevin has to make words starting with vowels.
+The game ends when both players have made all possible substrings.
+
+Scoring
+A player gets +1 point for each occurrence of the substring in the string, S.
+
+For Example:
+String S= BANANA
+Kevin's vowel beginning word = ANA
+Here, ANA occurs twice in BANANA. Hence, Kevin will get 2 Points.
+
+For better understanding, see the image below:
+
+[banana.png] (See uploaded image in this file)
+
+Your task is to determine the winner of the game and their score.
+
+Input Format
+
+A single line of input containing the string S.
+Note: The string S will contain only uppercase letters: [A-Z].
+
+Constraints
+0<len(S)<=10^6
+
+Output Format
+
+Print one line: the name of the winner and their score separated by a space.
+
+If the game is a draw, print Draw.
+
+Sample Input
+
+BANANA
+
+Sample Output
+
+Stuart 12
+
+Note :
+Vowels are only defined as AEIOU. In this problem, Y is not considered a vowel.
+
+________
+Answer (IN PROGRESS)
+
+def minion_game(string):
+    # Stuart
+    S_score =0
+    S_array_letters= ["i","u"]
+    for i in string:
+        if i not in "AEIOUaeiou":
+            S_array_letters.append(i)
+            key_letters +=i
+    del S_array_letters[0]
+    del S_array_letters[1]
+    S_array_index_of_letters = [0,1]
+    for count in len(S_array_letters):
+        S_array_index_of_letters+=string[count]
+    del S_array_index_of_letters[0]
+    del S_array_index_of_letters[1]
+    if string[0] not in "AEIOUaeiou":
+        S_score = S_score + len(string)-1
+
+#count all non-vowel letters, 
+#then get unfolding word starting from first non-vowel letter
+#then unfolding backwords
+#next letter, then backwards and forwards
+""" in index of non-vowel words"""
+
+    # Kevin
+    K_score =0
+    for i in len(string):
+        if i not in "AEIOUaeiou":
+            S_score+=1
+    
+    if S_score> K_score:
+        winner = S_score
+        name = "Stuart"
+    else: 
+        winner = K_score
+        name = "Kevin"
+    return (name + winner)
